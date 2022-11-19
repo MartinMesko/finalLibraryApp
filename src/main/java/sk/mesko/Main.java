@@ -1,4 +1,6 @@
-package sk.mesko;public class Main {
+package sk.mesko;
+
+public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
