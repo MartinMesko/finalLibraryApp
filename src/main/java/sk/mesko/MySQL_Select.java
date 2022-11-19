@@ -1,22 +1,14 @@
 package sk.mesko;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class MySQL_Select {
-    {
-        try (Connection spojenie = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/zadanie_eea",
-                "root",
-                "2030isNow");
-             Statement prikaz = spojenie.createStatement()) {
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+public class MySQL_Select extends AddNewUser{
+    String prikazSelect;
 
 
+    public MySQL_Select(int userId, String userGuid, String userName) {
+        super(userId, userGuid, userName);
+        this.prikazSelect = "select " + userId + " " + userGuid + " " + userName + " from zadanie_eea";
     }
+
 }
