@@ -49,14 +49,21 @@ public class Main {
 
                 }
 
-                while (true) {
-                    vymaz = scanner.next();
-
-                    if (vymaz.equals("vymaž")) {
-                        prikaz.executeUpdate(delete.prikazDelete);
-                    }
+                while (delete.jeVymaz())
+                {
+                    prikaz.executeUpdate(delete.prikazDelete);
                     break;
                 }
+
+
+//                while (true) {
+//                    vymaz = scanner.next();
+//
+//                    if (vymaz.equals("vymaž")) {
+//                        prikaz.executeUpdate(delete.prikazDelete);
+//                    }
+//                    break;
+//                }
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
