@@ -41,7 +41,7 @@ public class Main {
                     System.out.println("USER_ID       USER_GUID        USER_NAME");
                     System.out.println("  " + userID + "             " + userGuid + "                " + userName);
                     System.out.println();
-                    System.out.println("Pokiaľ chcete vymazať všetky položky z databázy napíšte na klávesnici ,,vymaž,,\n" +
+                    System.out.println("Pokiaľ chcete vymazať všetky položky z databázy napíšte na klávesnici: vymaž\n" +
                             "Pokiaľ si prajete záznamy ponechať, stlačte akúkoľvek klávesu");
                 }
                 while (delete.jeVymaz())
