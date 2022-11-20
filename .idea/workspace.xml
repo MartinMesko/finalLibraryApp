@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="New method added.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/AddNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/NewUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Insert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sk/mesko/AddNewUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sk/mesko/NewUserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +61,7 @@
       <recent name="sk.mesko" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AddNewUserTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sk.mesko.Main" />
       <module name="zadanie_EEA" />
@@ -129,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddNewUserTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AddNewUserTest" />
         <item itemvalue="JUnit.AddNewUserTest.whenSetnewUserThenGetCorrectUser (1)" />
         <item itemvalue="JUnit.AddNewUserTest.whenSetnewUserThenGetCorrectUser" />
       </list>
@@ -145,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668884697104</updated>
       <workItem from="1668884698508" duration="11633000" />
-      <workItem from="1668937914325" duration="1186000" />
+      <workItem from="1668937914325" duration="3584000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1668884879324</created>
@@ -175,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668901114257</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactoring.">
+      <created>1668940697106</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668940697106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +200,7 @@
     <MESSAGE value="Nex class added" />
     <MESSAGE value="New test method added." />
     <MESSAGE value="New method added." />
-    <option name="LAST_COMMIT_MESSAGE" value="New method added." />
+    <MESSAGE value="Refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
   </component>
 </project>
