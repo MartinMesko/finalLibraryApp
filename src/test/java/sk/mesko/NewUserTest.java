@@ -5,13 +5,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
-class AddNewUserTest {
+class NewUserTest {
 
     @ParameterizedTest
     @CsvSource(value = {"1,a1,Robert,1"})
-    void whenSetnewUserThenGetCorrectUser(int id, String guid, String name,int expectedResult)
+    void whenSetnewUserThenGetCorrectValue(int id, String guid, String name,int expectedResult)
     {
-        AddNewUser add = new AddNewUser(id, guid, name);
+        NewUser add = new NewUser(id, guid, name);
         int actuallId = add.userId;
         String actualName = add.userName;
         String actualGuid = add.userGuid;

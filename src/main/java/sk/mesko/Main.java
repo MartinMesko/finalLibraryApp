@@ -20,8 +20,12 @@ public class Main {
             String userGuid = scanner.next();
             System.out.println("Zadajte USER_NAME: ");
             String userName = scanner.next();
+            MySQL_Insert insert = new MySQL_Insert(userID, userGuid, userName);
             MySQL_Select select = new MySQL_Select(userID, userGuid, userName);
-//            ResultSet vysledky = prikaz.executeUpdate(String.valueOf(select));
+            System.out.println(insert.prikazInsert);
+            System.out.println("--------------------------------------------");
+            System.out.println(select.prikazSelect);
+//            prikaz.executeUpdate(String.valueOf(insert));
 
             System.out.println("Zaznamy tabulky zadanie_eea su: ");
             int pocetRiadkov = 0;
