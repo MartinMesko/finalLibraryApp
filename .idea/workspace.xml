@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Delete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Select.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668884697104</updated>
       <workItem from="1668884698508" duration="11633000" />
-      <workItem from="1668937914325" duration="3584000" />
+      <workItem from="1668937914325" duration="9318000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1668884879324</created>
@@ -177,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668940697106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactoring.">
+      <created>1668943055825</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668943055825</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
