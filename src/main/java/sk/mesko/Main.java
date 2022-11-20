@@ -14,11 +14,8 @@ public class Main {
                  Statement prikaz = spojenie.createStatement()) {
 
                 String vymaz = "";
-
                 Scanner scanner = new Scanner(System.in);
                 scanner.useLocale(Locale.ENGLISH);
-
-
 
                 System.out.println("Zadajte USER_ID: ");
                 int userID = scanner.nextInt();
@@ -46,28 +43,14 @@ public class Main {
                     System.out.println();
                     System.out.println("Pokiaľ chcete vymazať všetky položky z databázy napíšte na klávesnici ,,vymaž,,\n" +
                             "Pokiaľ si prajete záznamy ponechať, stlačte akúkoľvek klávesu");
-
                 }
-
                 while (delete.jeVymaz())
                 {
                     prikaz.executeUpdate(delete.prikazDelete);
                     break;
                 }
-
-
-//                while (true) {
-//                    vymaz = scanner.next();
-//
-//                    if (vymaz.equals("vymaž")) {
-//                        prikaz.executeUpdate(delete.prikazDelete);
-//                    }
-//                    break;
-//                }
-
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
     }
 }
