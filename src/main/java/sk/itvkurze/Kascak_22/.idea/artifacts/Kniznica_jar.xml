@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Kniznica:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Kniznica_jar</output-path>
-    <root id="archive" name="Kniznica.jar">
-      <element id="module-output" name="Kniznica" />
-    </root>
-  </artifact>
-</component>
