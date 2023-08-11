@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Delete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/mesko/MySQL_Delete.java" afterDir="false" />
-    </list>
+    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,24 +32,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/martin/Desktop/Study/finalLibraryApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,7 +59,7 @@
       <recent name="sk.mesko" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryApp">
+  <component name="RunManager" selected="JUnit.LibraryAppTest (1)">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Kascak_22.src.LibraryApp" />
       <module name="finalLibraryApp" />
@@ -89,16 +86,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryAppTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zadanie_EEA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sk.mesko.*" />
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_21.src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sk.mesko" />
-      <option name="MAIN_CLASS_NAME" value="sk.mesko.NewUserTest" />
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_21.src" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_21.src.LibraryAppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="finalLibraryApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_21.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_21.src" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_21.src.LibraryAppTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,6 +150,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryAppTest (1)" />
+        <item itemvalue="JUnit.LibraryAppTest" />
         <item itemvalue="Application.LibraryApp" />
         <item itemvalue="Application.Main" />
       </list>
@@ -157,6 +171,7 @@
       <workItem from="1669460589115" duration="369000" />
       <workItem from="1669460991127" duration="15818000" />
       <workItem from="1691737824963" duration="349000" />
+      <workItem from="1691738356991" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1668884879324</created>
@@ -235,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1668959845362</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactoring.">
+      <option name="closed" value="true" />
+      <created>1691738651582</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1691738651582</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
