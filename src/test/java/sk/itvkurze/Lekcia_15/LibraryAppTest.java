@@ -1,4 +1,4 @@
-package sk.itvkurze.Lekcia_14;
+package sk.itvkurze.Lekcia_15;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
