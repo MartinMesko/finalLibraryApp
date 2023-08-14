@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class TitlesPage {
     private Scanner scanner;
+    private final String lineSeparator = System.lineSeparator();
 
     public TitlesPage(Scanner scanner) { // konstruktor
         this.scanner = scanner;
@@ -22,8 +23,11 @@ public class TitlesPage {
         System.out.println("3 - Remove Title");
         System.out.println("4 - Back");
         System.out.print("Choose an option: ");
-//        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next(); // use next() instead of nextInt()
+        String input = scanner.next(); // Použi next() namiesto nextInt().
+        // Keď používateľ zadá neplatný vstup (napr. písmeno alebo slovo, keď očakávate číslo), metóda nextInt() vyvolá výnimku InputMismatchException.
+        // Ak sa  použije next(), program číta vstup ako reťazec a môže sa potom skúsiť konvertovať tento reťazec na číslo pomocou Integer.parseInt(input).
+        // Ak sa konverzia nepodarí (pretože vstup nie je číslo), môže sa chyba ošetriť pomocou výnimky NumberFormatException.
+
         int choice;
         try {
             choice = Integer.parseInt(input);
@@ -47,37 +51,50 @@ public class TitlesPage {
 
     List<String> showAlltitles() {
         List<String> result = new ArrayList<>();
-        BufferedReader reader = this.getFIle("titles.txt");
-        BufferedReader readerDvd = this.getFIle("titlesDVD.txt");
-        try {
-            if (reader != null && readerDvd != null) {
-                result.add("All titles");
-                String line = reader.readLine();
-                String lineDVD = readerDvd.readLine();
-                if (line == null && lineDVD == null) {
-                    result.add("No titles available");
-                }
+        try (BufferedReader reader = this.getFIle("titles.txt");
+             BufferedReader readerDvd = this.getFIle("titlesDVD.txt")) {
 
-                while (line != null) {
-                    String[] row = line.split(",");
-                    result.add("Name: " + row[0] + " - Author: " + row[1] + " | ISBN: " + row[2] + " | Number of pages: " + row[3] + " | Available copies: " + row[4]);
-                    line = reader.readLine();
-                }
+            String line = (reader != null) ? reader.readLine() : null;
+            String lineDVD = (readerDvd != null) ? readerDvd.readLine() : null;
 
-                while (lineDVD != null) {
-                    String[] row = lineDVD.split(",");
-                    result.add("Name: " + row[0] + " - Author: " + row[1] + "- Number of chapters: " + row[2] + " - Length in minutes: " + row[3] + " | Available copies: " + row[4]);
-                    lineDVD = readerDvd.readLine();
-                }
-
-                reader.close();
-                readerDvd.close();
+            if (line == null && lineDVD == null) {
+                result.add("No titles available");
+                return result;
             }
+
+            result.add("All Titles");
+
+            // Spracovanie kníh
+            while (line != null) {
+                String[] row = line.split(",");
+                result.add("Name: " + row[0] + " - Author: " + row[1] + " | ISBN: " + row[2] + " | Number of pages: " + row[3] + " | Available copies: " + row[4]);
+                line = reader.readLine();
+            }
+
+            // Spracovanie DVD
+            while (lineDVD != null) {
+                String[] row = lineDVD.split(",");
+                result.add("Name: " + row[0] + " - Author: " + row[1] + " - Number of chapters: " + row[2] + " - Length in minutes: " + row[3] + " | Available copies: " + row[4]);
+                lineDVD = readerDvd.readLine();
+            }
+
+            // Výpis titulov
+            for (String title : result) {
+                System.out.println(title);
+            }
+
+            System.out.print(lineSeparator + "Press enter to return to Titles menu...");
+            scanner.nextLine();  // To consume the \n character from before
+            scanner.nextLine();  // To wait for the user to press Enter
+            display();  // Return to Titles menu
+
         } catch (IOException e) {
             e.printStackTrace();
         }
         return result;
     }
+
+
 
 
 
