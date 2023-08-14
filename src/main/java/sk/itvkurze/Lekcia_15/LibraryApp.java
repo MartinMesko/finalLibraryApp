@@ -22,7 +22,7 @@ public class LibraryApp {
 
             if (scanner.hasNextInt()) { // kontrola, či je nasledujúce vstupné číslo
                 choice = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine();// Pridaný riadok pre očistenie vstupu
                 switch (choice) {
                     case 1:
                         titlesPage.display();

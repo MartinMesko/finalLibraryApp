@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sk/itvkurze/Lekcia_15/LibraryAppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/titles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/titles.txt" afterDir="false" />
-    </list>
+    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692004292653</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Refactoring.">
+      <option name="closed" value="true" />
+      <created>1692009419896</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1692009419896</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
