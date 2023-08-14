@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
+    <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Zmena TitlePage, ukladanie udajov do ArrayList.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692011722413</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Zmena TitlePage, ukladanie udajov do ArrayList.">
+      <option name="closed" value="true" />
+      <created>1692015654773</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1692015654773</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +378,7 @@
     <MESSAGE value="New test method added." />
     <MESSAGE value="New method added." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="Zmena TitlePage, ukladanie udajov do ArrayList." />
+    <option name="LAST_COMMIT_MESSAGE" value="Zmena TitlePage, ukladanie udajov do ArrayList." />
   </component>
 </project>

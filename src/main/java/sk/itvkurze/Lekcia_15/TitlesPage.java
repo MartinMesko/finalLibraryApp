@@ -1,55 +1,16 @@
 package sk.itvkurze.Lekcia_15;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class TitlesPage {
     private final Scanner scanner;
-    private final List<String> titles = new ArrayList<>();
-    private final List<String> titlesDVD = new ArrayList<>();
-    private final String lineSeparator = System.lineSeparator();
+    private final List<String> titlesBooks = new ArrayList<>();
+    private final List<String> titlesDVDs = new ArrayList<>();
 
     public TitlesPage(Scanner scanner) { // konstruktor
         this.scanner = scanner;
-        loadTitles();
-    }
-
-    private void loadTitles() {
-        BufferedReader readerTitles = null;
-        BufferedReader readerTitlesDVD = null;
-        try {
-            File titlesFile = new File("titles.txt");
-            File titlesDVDFile = new File("titlesDVD.txt");
-
-            readerTitles = new BufferedReader(new FileReader(titlesFile));
-            readerTitlesDVD = new BufferedReader(new FileReader(titlesDVDFile));
-
-            String line;
-            while ((line = readerTitles.readLine()) != null) {
-                titles.add(line);
-            }
-            while ((line = readerTitlesDVD.readLine()) != null) {
-                titlesDVD.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (readerTitles != null) {
-                    readerTitles.close();
-                }
-                if (readerTitlesDVD != null) {
-                    readerTitlesDVD.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public void display() {
@@ -70,45 +31,56 @@ public class TitlesPage {
             return;
         }
         switch (choice) {
-            case 1 -> showAllTitles();
-            case 2 -> addTitle();
-            case 3 -> deleteTitle();
-            case 4 -> goBack();
-            default -> {
+            case 1:
+                showAlltitles();
+                break;
+            case 2:
+                addTitle();
+                break;
+            case 3:
+                deleteTitle();
+                break;
+            case 4:
+                goBack();
+                break;
+            default:
                 System.out.println("Please enter a number in the range from 1 to 4.");
                 display();
-            }
+                break;
         }
     }
 
-    public void showAllTitles() {
+    public void showAlltitles() {
         System.out.println("All Titles:");
-        for (String title : titles) {
+        for (String title : titlesBooks) {
             String[] row = title.split(",");
             if (row.length >= 5) {
                 System.out.println("Name: " + row[0] + " - Author: " + row[1] + " | ISBN: " + row[2] + " | Number of pages: " + row[3] + " | Available copies: " + row[4]);
             }
         }
-        for (String title : titlesDVD) {
+        for (String title : titlesDVDs) {
             String[] row = title.split(",");
             if (row.length >= 5) {
                 System.out.println("Name: " + row[0] + " - Author: " + row[1] + " - Number of chapters: " + row[2] + " - Length in minutes: " + row[3] + " | Available copies: " + row[4]);
             }
         }
-        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-        display();  // Zobrazíme menu s názvami
+
+        System.out.println("Press enter to return to Titles menu...");
+        scanner.nextLine();
+        display();
     }
 
-    private static void addTitle() {
+    private void addTitle() {
         // TODO: Implementuj metodu pridaj titul
+        // Napríklad: titlesBooks.add("Name,Author,ISBN,Pages,Copies"); alebo pridať interaktívne pomocou scanneru
     }
 
-    private static void deleteTitle() {
+    private void deleteTitle() {
         // TODO: Implementuje metodu zmazania
+        // Napríklad: titlesBooks.remove(specificTitle);
     }
 
-    private static void goBack() {
+    private void goBack() {
         System.out.println("Going back to main menu...");
     }
 }
