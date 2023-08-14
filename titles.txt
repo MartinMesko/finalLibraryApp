@@ -1,2 +1,2 @@
-Title1,Author1,Type1,Description1,5
-Title2,Author2,Type2,Description2,0
+Book1,Author1,ISBN1,300,5
+Book2,Author2,ISBN2,500,3

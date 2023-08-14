@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
-      <change afterPath="$PROJECT_DIR$/titlesDVD.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sk/itvkurze/Lekcia_15/LibraryAppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/titles.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -52,7 +53,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "two.files.diff.last.used.file": "/Users/martin/Desktop/Study/bytearraytest - kópia/src/main/java/sk/Kascak_17_upravene/src/TitlesPage.java",
+    "two.files.diff.last.used.file": "/Users/martin/Desktop/Study/finalLibraryAppp/src/main/java/sk/itvkurze/Lekcia_21/src/TitlesPage.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -64,36 +65,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sk.itvkurze.Lekcia_15" />
       <recent name="sk.mesko" />
     </key>
   </component>
   <component name="RunManager" selected="Application.sk.itvkurze.Lekcia_15.LibraryApp">
-    <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Kascak_22.src.LibraryApp" />
-      <module name="finalLibraryApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sk.itvkurze.Kascak_22.src.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sk.mesko.Main" />
-      <module name="finalLibraryApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sk.mesko.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="sk.itvkurze.Lekcia_15.LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_15.LibraryApp" />
       <module name="zadanie_EEA" />
@@ -107,32 +83,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryAppTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="finalLibraryApp" />
+    <configuration name="LibraryAppTest.testShowAllTitlesWithTitlesAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zadanie_EEA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sk.itvkurze.Lekcia_21.src.*" />
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_15.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_21.src" />
-      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_21.src.LibraryAppTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="finalLibraryApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sk.itvkurze.Lekcia_21.src.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_21.src" />
-      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_21.src.LibraryAppTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_15" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_15.LibraryAppTest" />
+      <option name="METHOD_NAME" value="testShowAllTitlesWithTitlesAvailable" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,13 +115,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TitlesPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zadanie_EEA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_15.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_15" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_15.TitlesPageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TitlesPageTest,testShowAllTitlesWithTitlesAvailable and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zadanie_EEA" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="sk.itvkurze.Lekcia_15.TitlesPageTest,testShowAllTitlesWithTitlesAvailable" />
+        <pattern testClass="sk.itvkurze.Lekcia_15.TitlesPageTest,testShowAllTitlesWhenNoTitlesAvailable" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TitlesPageTest.testShowAllTitlesWithTitlesAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zadanie_EEA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_15.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_15" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_15.TitlesPageTest" />
+      <option name="METHOD_NAME" value="testShowAllTitlesWithTitlesAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.sk.itvkurze.Lekcia_15.LibraryApp" />
-        <item itemvalue="JUnit.LibraryAppTest (1)" />
-        <item itemvalue="JUnit.LibraryAppTest" />
-        <item itemvalue="Application.LibraryApp" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TitlesPageTest,testShowAllTitlesWithTitlesAvailable and 1 more" />
+        <item itemvalue="JUnit.TitlesPageTest.testShowAllTitlesWithTitlesAvailable" />
+        <item itemvalue="JUnit.TitlesPageTest" />
+        <item itemvalue="JUnit.LibraryAppTest.testShowAllTitlesWithTitlesAvailable" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691999324471</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refactoring.">
+      <option name="closed" value="true" />
+      <created>1692004292653</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692004292653</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
