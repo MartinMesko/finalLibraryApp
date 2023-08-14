@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Zmena TitlePage, ukladanie udajov do ArrayList.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/MembersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/MembersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/RentalsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/RentalsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -354,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692015654773</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Zmena TitlePage, ukladanie udajov do ArrayList.">
+      <option name="closed" value="true" />
+      <created>1692016096357</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1692016096358</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

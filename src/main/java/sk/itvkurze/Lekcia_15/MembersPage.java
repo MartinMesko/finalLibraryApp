@@ -3,7 +3,7 @@ package sk.itvkurze.Lekcia_15;
 import java.util.Scanner;
 public class MembersPage {
 
-    public static void showPage() {
+    public static void displayMembersMenu() {
         System.out.println(">>> Members Page <<<");
         System.out.println("1 - Search Members");
         System.out.println("2 - Add Member");
@@ -21,7 +21,7 @@ public class MembersPage {
             case 5 -> LibraryApp.showMainMenu();
             default -> {
                 System.out.println("Please enter a number in the range from 1 to 5.");
-                showPage();
+                displayMembersMenu();
             }
         }
     }

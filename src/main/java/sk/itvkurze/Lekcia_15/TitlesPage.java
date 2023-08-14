@@ -13,7 +13,7 @@ public class TitlesPage {
         this.scanner = scanner;
     }
 
-    public void display() {
+    public void displayTitlesMenu() {
         System.out.println("Titles ");
         System.out.println("1 - Show All Titles");
         System.out.println("2 - Add Title");
@@ -27,28 +27,22 @@ public class TitlesPage {
             choice = Integer.parseInt(input);
         } catch (NumberFormatException e) {
             System.out.println("Please enter a valid value.");
-            display();
+            displayTitlesMenu();
             return;
         }
+
         switch (choice) {
-            case 1:
-                showAlltitles();
-                break;
-            case 2:
-                addTitle();
-                break;
-            case 3:
-                deleteTitle();
-                break;
-            case 4:
-                goBack();
-                break;
-            default:
+            case 1 -> showAlltitles();
+            case 2 -> addTitle();
+            case 3 -> deleteTitle();
+            case 4 -> goBack();
+            default -> {
                 System.out.println("Please enter a number in the range from 1 to 4.");
-                display();
-                break;
+                displayTitlesMenu();
+            }
         }
     }
+
 
     public void showAlltitles() {
         System.out.println("All Titles:");
@@ -67,7 +61,7 @@ public class TitlesPage {
 
         System.out.println("Press enter to return to Titles menu...");
         scanner.nextLine();
-        display();
+        displayTitlesMenu();
     }
 
     private void addTitle() {
