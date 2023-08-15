@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class TitlesPage {
     private final Scanner scanner;
-    private final List<String> titles = new ArrayList<>();
-    private final List<String> titlesDVD = new ArrayList<>();
+    private List<String> titles = new ArrayList<>();
+    private List<String> titlesDVD = new ArrayList<>();
     private final String lineSeparator = System.lineSeparator();
 
     public TitlesPage(Scanner scanner) { // konstruktor
@@ -19,38 +19,34 @@ public class TitlesPage {
         loadTitles();
     }
 
-    private void loadTitles() {
-        BufferedReader readerTitles = null;
-        BufferedReader readerTitlesDVD = null;
+    private List<String> loadTitlesFromFile(String filePath) throws IOException {
+        List<String> result = new ArrayList<>();
+        BufferedReader reader = null;
         try {
-            File titlesFile = new File("titles.txt");
-            File titlesDVDFile = new File("titlesDVD.txt");
-
-            readerTitles = new BufferedReader(new FileReader(titlesFile));
-            readerTitlesDVD = new BufferedReader(new FileReader(titlesDVDFile));
+            File titlesFile = new File(filePath);
+            reader = new BufferedReader(new FileReader(titlesFile));
 
             String line;
-            while ((line = readerTitles.readLine()) != null) {
-                titles.add(line);
+            while ((line = reader.readLine()) != null) {
+                result.add(line);
             }
-            while ((line = readerTitlesDVD.readLine()) != null) {
-                titlesDVD.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         } finally {
-            try {
-                if (readerTitles != null) {
-                    readerTitles.close();
-                }
-                if (readerTitlesDVD != null) {
-                    readerTitlesDVD.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (reader != null) {
+                reader.close();
             }
         }
+        return result;
     }
+
+    public void loadTitles() {
+        try {
+            titles = loadTitlesFromFile("titles.txt");
+            titlesDVD = loadTitlesFromFile("titlesDVD.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void displayTitlesMenu() {
         System.out.println("Titles ");
@@ -69,6 +65,7 @@ public class TitlesPage {
             displayTitlesMenu();
             return;
         }
+
         switch (choice) {
             case 1 -> showAllTitles();
             case 2 -> addTitle();

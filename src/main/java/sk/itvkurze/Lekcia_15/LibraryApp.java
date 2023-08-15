@@ -40,7 +40,7 @@ public class LibraryApp {
         }
     }
 
-    private static int getChoice() {
+    public static int getChoice() {
         String input = scanner.nextLine();
         try {
             return Integer.parseInt(input);
