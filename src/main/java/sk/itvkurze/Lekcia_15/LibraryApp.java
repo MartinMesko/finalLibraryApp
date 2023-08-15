@@ -46,7 +46,7 @@ public class LibraryApp {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
             System.out.println("Please enter a valid value.");
-            return getChoice(); // Re-ask for input recursively until valid input is given
+            return getChoice(); // Opätovne sa rekurzívne pýta na vstup, kým nie je zadaný platný vstup
         }
     }
 }
