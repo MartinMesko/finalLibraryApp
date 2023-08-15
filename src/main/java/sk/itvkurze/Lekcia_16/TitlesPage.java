@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class TitlesPage {
     private final Scanner scanner;
-    private List<String> titles = new ArrayList<>();
-    private List<String> titlesDVD = new ArrayList<>();
+    private final List<Book> books = new ArrayList<>();
+    private final List<DVD> dvds = new ArrayList<>();
     private final String lineSeparator = System.lineSeparator();
 
-    public TitlesPage(Scanner scanner) { // konstruktor
+    public TitlesPage(Scanner scanner) {
         this.scanner = scanner;
         loadTitles();
     }
@@ -21,8 +21,7 @@ public class TitlesPage {
         loadTitles();
     }
 
-    private List<String> loadTitlesFromFile(String filePath) throws IOException {
-        List<String> result = new ArrayList<>();
+    private void loadTitlesFromFile(String filePath, String type) throws IOException {
         BufferedReader reader = null;
         try {
             File titlesFile = new File(filePath);
@@ -30,33 +29,36 @@ public class TitlesPage {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                result.add(line);
+                String[] parts = line.split(",");
+                if (type.equals("Book") && parts.length >= 6) {
+                    books.add(new Book(parts[0], parts[1], Integer.parseInt(parts[3]), parts[2], Integer.parseInt(parts[4]), Integer.parseInt(parts[5])));
+                } else if (type.equals("DVD") && parts.length >= 6) {
+                    dvds.add(new DVD(parts[0], parts[1], Integer.parseInt(parts[3]), Integer.parseInt(parts[2]), Integer.parseInt(parts[4]), Integer.parseInt(parts[5])));
+                }
             }
         } finally {
             if (reader != null) {
                 reader.close();
             }
         }
-        return result;
     }
 
     public void loadTitles() {
         try {
-            titles = loadTitlesFromFile("titles.txt");
-            titlesDVD = loadTitlesFromFile("titlesDVD.txt");
+            loadTitlesFromFile("titles.txt", "Book");
+            loadTitlesFromFile("titlesDVD.txt", "DVD");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public List<String> getTitles() {
-        return new ArrayList<>(titles);
+    public List<Book> getBooks() {
+        return new ArrayList<>(books);
     }
 
-    public List<String> getTitlesDVD() {
-        return new ArrayList<>(titlesDVD);
+    public List<DVD> getDVDs() {
+        return new ArrayList<>(dvds);
     }
-
 
     public void displayTitlesMenu() {
         System.out.println("Titles ");
@@ -90,21 +92,16 @@ public class TitlesPage {
 
     public void showAllTitles() {
         System.out.println("All Titles:");
-        for (String title : titles) {
-            String[] row = title.split(",");
-            if (row.length >= 5) {
-                System.out.println("Name: " + row[0] + " - Author: " + row[1] + " | ISBN: " + row[2] + " | Number of pages: " + row[3] + " | Available copies: " + row[4]);
-            }
+        for (Book book : books) {
+            System.out.println("Name: " + book.getTitle() + " - Author: " + book.getAuthorName() + " | ISBN: " + book.getIsbn() + " | Number of pages: " + book.getPageCount() + " | Available copies: " + book.getAvailableCopies());
         }
-        for (String title : titlesDVD) {
-            String[] row = title.split(",");
-            if (row.length >= 5) {
-                System.out.println("Name: " + row[0] + " - Author: " + row[1] + " - Number of chapters: " + row[2] + " - Length in minutes: " + row[3] + " | Available copies: " + row[4]);
-            }
+        for (DVD dvd : dvds) {
+            System.out.println("Name: " + dvd.getTitle() + " - Author: " + dvd.getAuthorName() + " - Number of chapters: " + dvd.getNumberOfTracks() + " - Length in minutes: " + dvd.getDurationInMinutes() + " | Available copies: " + dvd.getAvailableCopies());
         }
+
         System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-        displayTitlesMenu();  // Zobrazíme menu s názvami
+        scanner.nextLine();
+        displayTitlesMenu();
     }
 
     public void addTitle() {
@@ -147,7 +144,7 @@ public class TitlesPage {
         System.out.print("Enter the number of copies of the book: ");
         int copies = Integer.parseInt(scanner.nextLine());
 
-        boolean result = saveTitle(name, author, "Book", isbn + "," + pages, copies);
+        boolean result = saveTitle(new Book(author, name, pages, isbn, copies, copies)); // You can modify this if you have a separate variable for total copies
         if (result) {
             System.out.println("The book has been added successfully.");
         } else {
@@ -167,7 +164,7 @@ public class TitlesPage {
         System.out.print("Enter the number of copies of the DVD: ");
         int copies = Integer.parseInt(scanner.nextLine());
 
-        boolean result = saveTitle(name, author, "DVD", chapters + "," + length, copies);
+        boolean result = saveTitle(new DVD(author, name, length, chapters, copies, copies)); // You can modify this if you have a separate variable for total copies
         if (result) {
             System.out.println("The DVD has been added successfully.");
         } else {
@@ -175,96 +172,71 @@ public class TitlesPage {
         }
     }
 
-    boolean saveTitle(String titleName, String author, String type, String description, int availableCopies) {
-        String titleString = titleName + "," + author + "," + type + "," + description + "," + availableCopies;
-
+    boolean saveTitle(Object title) {
         try {
-            String fileName = type.equalsIgnoreCase("DVD") ? "titlesDVD.txt" : "titles.txt";
+            String fileName;
+            String titleString;
+
+            if (title instanceof Book) {
+                Book book = (Book) title;
+                fileName = "titles.txt";
+                titleString = book.getAuthorName() + "," + book.getTitle() + "," + book.getIsbn() + "," + book.getPageCount() + "," + book.getAvailableCopies() + "," + book.getTotalCopies();
+                books.add(book);
+            } else {
+                DVD dvd = (DVD) title;
+                fileName = "titlesDVD.txt";
+                titleString = dvd.getAuthorName() + "," + dvd.getTitle() + "," + dvd.getNumberOfTracks() + "," + dvd.getDurationInMinutes() + "," + dvd.getAvailableCopies() + "," + dvd.getTotalCopies();
+                dvds.add(dvd);
+            }
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
                 writer.write(titleString + lineSeparator);
             }
 
-            if (type.equalsIgnoreCase("DVD")) {
-                titlesDVD.add(titleString);
-            } else {
-                titles.add(titleString);
-            }
-
-            return true;  // Return true if title is added successfully
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
-            return false;  // Return false if title addition failed
+            return false;
         }
     }
 
-
-
-//    private void addTitle() {
-//        System.out.println("Add a new title");
-//        System.out.println("1 - Add a book");
-//        System.out.println("2 - Add a DVD");
-//        System.out.println("3 - Back");
-//        System.out.print("Choose an option: ");
-//        String input = scanner.nextLine();
+//    private void deleteTitle() {
+//        System.out.println("Remove a title");
+//        System.out.print("Enter the name of the title: ");
+//        String name = scanner.nextLine();
 //
-//        int choice;
-//        try {
-//            choice = Integer.parseInt(input);
-//        } catch (NumberFormatException e) {
-//            System.out.println("Please enter a valid value.");
-//            addTitle();
-//            return;
-//        }
-//
-//        switch (choice) {
-//            case 1 -> addBook();
-//            case 2 -> addDVD();
-//            case 3 -> displayTitlesMenu();
-//            default -> {
-//                System.out.println("Please enter a number in the range from 1 to 3.");
-//                addTitle();
+//        boolean found = false;
+//        for (String title : titles) {
+//            String[] row = title.split(",");
+//            if (row.length >= 5 && row[0].equals(name)) {
+//                titles.remove(title);
+//                found = true;
+//                break;
 //            }
 //        }
+//        if (!found) {
+//            for (String title : titlesDVD) {
+//                String[] row = title.split(",");
+//                if (row.length >= 5 && row[0].equals(name)) {
+//                    titlesDVD.remove(title);
+//                    found = true;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        if (found) {
+//            System.out.println("The title has been removed successfully.");
+//        } else {
+//            System.out.println("The title has not been found.");
+//        }
+//        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
+//        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
+//        displayTitlesMenu();  // Zobrazíme menu s názvami
 //    }
 
-
-
-
-
-
     private void deleteTitle() {
-        System.out.println("Remove a title");
-        System.out.print("Enter the name of the title: ");
-        String name = scanner.nextLine();
-
-        boolean found = false;
-        for (String title : titles) {
-            String[] row = title.split(",");
-            if (row.length >= 5 && row[0].equals(name)) {
-                titles.remove(title);
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            for (String title : titlesDVD) {
-                String[] row = title.split(",");
-                if (row.length >= 5 && row[0].equals(name)) {
-                    titlesDVD.remove(title);
-                    found = true;
-                    break;
-                }
-            }
-        }
-
-        if (found) {
-            System.out.println("The title has been removed successfully.");
-        } else {
-            System.out.println("The title has not been found.");
-        }
-        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-        displayTitlesMenu();  // Zobrazíme menu s názvami
+        //TODO: implement
     }
 
     private void goBack() {
