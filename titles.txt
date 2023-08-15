@@ -38,6 +38,24 @@ Piesočná hodina,E. V. Thompson,1818181818181,270,15
 Báječný svet Henryho Sugarovca,Roald Dahl,1919191919191,220,10
 Dobrodružstvo Marco Pola,Don Lessem,2020202020202,280,20
 Magorova pomsta,Paul Stewart,2121212121212,260,25
-
-
-
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+NJKBjk,KLNKLNLK,Book,11111,111,11
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10
+Test Invalid,Test Author,InvalidType,none,none,1
+Test Book,Test Author,Book,123456789,200,10
+Test Book,Test Author,Book,123456789,200,10

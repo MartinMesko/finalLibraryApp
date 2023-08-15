@@ -1,9 +1,6 @@
-package sk.itvkurze.Lekcia_15;
+package sk.itvkurze.Lekcia_16;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +13,11 @@ public class TitlesPage {
 
     public TitlesPage(Scanner scanner) { // konstruktor
         this.scanner = scanner;
+        loadTitles();
+    }
+
+    public TitlesPage() {
+        this.scanner = new Scanner(System.in);
         loadTitles();
     }
 
@@ -45,6 +47,14 @@ public class TitlesPage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<String> getTitles() {
+        return new ArrayList<>(titles);
+    }
+
+    public List<String> getTitlesDVD() {
+        return new ArrayList<>(titlesDVD);
     }
 
 
@@ -97,7 +107,7 @@ public class TitlesPage {
         displayTitlesMenu();  // Zobrazíme menu s názvami
     }
 
-    private void addTitle() {
+    public void addTitle() {
         System.out.println("Add a new title");
         System.out.println("1 - Add a book");
         System.out.println("2 - Add a DVD");
@@ -125,24 +135,7 @@ public class TitlesPage {
         }
     }
 
-    protected boolean addBook(String name, String author, String isbn, String pages, String copies) {
-        if (name == null || author == null || isbn == null || pages == null || copies == null) {
-            return false;
-        }
-        String newTitle = name + "," + author + "," + isbn + "," + pages + "," + copies;
-        return titles.add(newTitle);
-    }
-
-    protected boolean addDVD(String name, String author, String chapters, String length, String copies) {
-        if (name == null || author == null || chapters == null || length == null || copies == null) {
-            return false;
-        }
-        String newTitle = name + "," + author + "," + chapters + "," + length + "," + copies;
-        return titlesDVD.add(newTitle);
-    }
-
     private void addBook() {
-        System.out.println("Add a new book");
         System.out.print("Enter the name of the book: ");
         String name = scanner.nextLine();
         System.out.print("Enter the author of the book: ");
@@ -150,40 +143,94 @@ public class TitlesPage {
         System.out.print("Enter the ISBN of the book: ");
         String isbn = scanner.nextLine();
         System.out.print("Enter the number of pages of the book: ");
-        String pages = scanner.nextLine();
+        int pages = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter the number of copies of the book: ");
-        String copies = scanner.nextLine();
+        int copies = Integer.parseInt(scanner.nextLine());
 
-        String newTitle = name + "," + author + "," + isbn + "," + pages + "," + copies;
-        titles.add(newTitle);
-
-        System.out.println("The book has been added successfully.");
-        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-        displayTitlesMenu();  // Zobrazíme menu s názvami
+        boolean result = saveTitle(name, author, "Book", isbn + "," + pages, copies);
+        if (result) {
+            System.out.println("The book has been added successfully.");
+        } else {
+            System.out.println("Failed to add the book.");
+        }
     }
 
     private void addDVD() {
-        System.out.println("Add a new DVD");
         System.out.print("Enter the name of the DVD: ");
         String name = scanner.nextLine();
         System.out.print("Enter the author of the DVD: ");
         String author = scanner.nextLine();
         System.out.print("Enter the number of chapters of the DVD: ");
-        String chapters = scanner.nextLine();
+        int chapters = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter the length in minutes of the DVD: ");
-        String length = scanner.nextLine();
+        int length = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter the number of copies of the DVD: ");
-        String copies = scanner.nextLine();
+        int copies = Integer.parseInt(scanner.nextLine());
 
-        String newTitle = name + "," + author + "," + chapters + "," + length + "," + copies;
-        titlesDVD.add(newTitle);
-
-        System.out.println("The DVD has been added successfully.");
-        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-        displayTitlesMenu();  // Zobrazíme menu s názvami
+        boolean result = saveTitle(name, author, "DVD", chapters + "," + length, copies);
+        if (result) {
+            System.out.println("The DVD has been added successfully.");
+        } else {
+            System.out.println("Failed to add the DVD.");
+        }
     }
+
+    boolean saveTitle(String titleName, String author, String type, String description, int availableCopies) {
+        String titleString = titleName + "," + author + "," + type + "," + description + "," + availableCopies;
+
+        try {
+            String fileName = type.equalsIgnoreCase("DVD") ? "titlesDVD.txt" : "titles.txt";
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+                writer.write(titleString + lineSeparator);
+            }
+
+            if (type.equalsIgnoreCase("DVD")) {
+                titlesDVD.add(titleString);
+            } else {
+                titles.add(titleString);
+            }
+
+            return true;  // Return true if title is added successfully
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;  // Return false if title addition failed
+        }
+    }
+
+
+
+//    private void addTitle() {
+//        System.out.println("Add a new title");
+//        System.out.println("1 - Add a book");
+//        System.out.println("2 - Add a DVD");
+//        System.out.println("3 - Back");
+//        System.out.print("Choose an option: ");
+//        String input = scanner.nextLine();
+//
+//        int choice;
+//        try {
+//            choice = Integer.parseInt(input);
+//        } catch (NumberFormatException e) {
+//            System.out.println("Please enter a valid value.");
+//            addTitle();
+//            return;
+//        }
+//
+//        switch (choice) {
+//            case 1 -> addBook();
+//            case 2 -> addDVD();
+//            case 3 -> displayTitlesMenu();
+//            default -> {
+//                System.out.println("Please enter a number in the range from 1 to 3.");
+//                addTitle();
+//            }
+//        }
+//    }
+
+
+
+
+
 
     private void deleteTitle() {
         System.out.println("Remove a title");
@@ -225,15 +272,4 @@ public class TitlesPage {
     }
 
 
-//    private static void addTitle() {
-//        // TODO: Implementuj metodu pridaj titul
-//    }
-//
-//    private static void deleteTitle() {
-//        // TODO: Implementuje metodu zmazania
-//    }
-//
-//    private static void goBack() {
-//        System.out.println("Going back to main menu...");
-//    }
 }

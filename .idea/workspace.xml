@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="647addda-5021-4086-b5ca-b074581f09e6" name="Changes" comment="Refactoring.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_16/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_16/DVD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_16/LibraryApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_16/TitlesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sk/itvkurze/Lekcia_16/LibraryAppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/LibraryApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sk/itvkurze/Lekcia_14/LibraryAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sk/itvkurze/Lekcia_14/LibraryAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/titles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titlesDVD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/titlesDVD.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -53,6 +59,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "two.files.diff.last.used.file": "/Users/martin/Desktop/Study/library_final_app/src/main/java/sk/itvkurze/Lekcia_15/TitlesPage.java",
     "vue.rearranger.settings.migration": "true"
   }
@@ -65,17 +72,18 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sk.itvkurze.Lekcia_16" />
       <recent name="sk.itvkurze.Lekcia_15" />
       <recent name="sk.mesko" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibraryAppTest">
-    <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_14.LibraryApp" />
+  <component name="RunManager" selected="JUnit.LibraryAppTest (1)">
+    <configuration name="sk.itvkurze.Lekcia_16.LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_16.LibraryApp" />
       <module name="zadanie_EEA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sk.itvkurze.Lekcia_14.*" />
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_16.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,15 +91,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sk.itvkurze.Lekcia_15.LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_15.LibraryApp" />
+    <configuration name="LibraryAppTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zadanie_EEA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sk.itvkurze.Lekcia_15.*" />
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_16.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_16" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_16.LibraryAppTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,35 +121,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryAppTest,testShowAllTitlesWithTitlesAvailable and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryAppTest.testAddBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zadanie_EEA" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="sk.itvkurze.Lekcia_15.LibraryAppTest,testShowAllTitlesWithTitlesAvailable" />
-        <pattern testClass="sk.itvkurze.Lekcia_15.LibraryAppTest,testShowAllTitlesWhenNoTitlesAvailable" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_16.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_16" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_16.LibraryAppTest" />
+      <option name="METHOD_NAME" value="testAddBook" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TitlesPageTest,testShowAllTitlesWithTitlesAvailable and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryAppTest.testSaveListUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zadanie_EEA" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="sk.itvkurze.Lekcia_15.TitlesPageTest,testShowAllTitlesWithTitlesAvailable" />
-        <pattern testClass="sk.itvkurze.Lekcia_15.TitlesPageTest,testShowAllTitlesWhenNoTitlesAvailable" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.itvkurze.Lekcia_16.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sk.itvkurze.Lekcia_16" />
+      <option name="MAIN_CLASS_NAME" value="sk.itvkurze.Lekcia_16.LibraryAppTest" />
+      <option name="METHOD_NAME" value="testSaveListUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryAppTest (1)" />
+        <item itemvalue="Application.sk.itvkurze.Lekcia_16.LibraryApp" />
+        <item itemvalue="JUnit.LibraryAppTest.testSaveListUpdate" />
+        <item itemvalue="JUnit.LibraryAppTest.testAddBook" />
         <item itemvalue="JUnit.LibraryAppTest" />
-        <item itemvalue="Application.LibraryApp" />
-        <item itemvalue="Application.sk.itvkurze.Lekcia_15.LibraryApp" />
-        <item itemvalue="JUnit.LibraryAppTest,testShowAllTitlesWithTitlesAvailable and 1 more" />
-        <item itemvalue="JUnit.TitlesPageTest,testShowAllTitlesWithTitlesAvailable and 1 more" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +180,7 @@
       <workItem from="1691738356991" duration="915000" />
       <workItem from="1692086663200" duration="49000" />
       <workItem from="1692086722611" duration="106000" />
-      <workItem from="1692086847865" duration="11582000" />
+      <workItem from="1692086847865" duration="27668000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1668884879324</created>
@@ -367,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692090788297</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Refactoring.">
+      <option name="closed" value="true" />
+      <created>1692109642653</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1692109642653</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +413,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="vytvorenie spojenia s databazou" />
     <MESSAGE value="Nex class added" />
