@@ -211,41 +211,6 @@ public class TitlesPage {
         }
     }
 
-//    private void deleteTitle() {
-//        System.out.println("Remove a title");
-//        System.out.print("Enter the name of the title: ");
-//        String name = scanner.nextLine();
-//
-//        boolean found = false;
-//        for (String title : titles) {
-//            String[] row = title.split(",");
-//            if (row.length >= 5 && row[0].equals(name)) {
-//                titles.remove(title);
-//                found = true;
-//                break;
-//            }
-//        }
-//        if (!found) {
-//            for (String title : titlesDVD) {
-//                String[] row = title.split(",");
-//                if (row.length >= 5 && row[0].equals(name)) {
-//                    titlesDVD.remove(title);
-//                    found = true;
-//                    break;
-//                }
-//            }
-//        }
-//
-//        if (found) {
-//            System.out.println("The title has been removed successfully.");
-//        } else {
-//            System.out.println("The title has not been found.");
-//        }
-//        System.out.println(lineSeparator + "Press enter to return to Titles menu...");
-//        scanner.nextLine();  // Počká sa, kým používateľ stlačí kláves enter
-//        displayTitlesMenu();  // Zobrazíme menu s názvami
-//    }
-
     private void deleteTitle() {
         //TODO: implement
     }
