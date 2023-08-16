@@ -32,7 +32,7 @@ class LibraryAppTest {
     }
 
     @Test
-    public void someTest() {
+    public void whenFileExistThenTestPasses() {
 
         assertTrue(testFile.exists(), "Testovací súbor by mal existovať");
     }

@@ -30,11 +30,22 @@ public class TitlesPage {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (type.equals("Book") && parts.length >= 6) {
-                    books.add(new Book(parts[0], parts[1], Integer.parseInt(parts[3]), parts[2], Integer.parseInt(parts[4]), Integer.parseInt(parts[5])));
-                } else if (type.equals("DVD") && parts.length >= 6) {
-                    dvds.add(new DVD(parts[0], parts[1], Integer.parseInt(parts[3]), Integer.parseInt(parts[2]), Integer.parseInt(parts[4]), Integer.parseInt(parts[5])));
+                try {
+                    if (type.equals("Book") && parts.length >= 5) {
+                        int pageCount = Integer.parseInt(parts[3]);
+                        int availableCopies = Integer.parseInt(parts[4]);
+                        books.add(new Book(parts[0], parts[1], pageCount, parts[2], availableCopies));
+                    } else if (type.equals("DVD") && parts.length >= 5) {
+                        int duration = Integer.parseInt(parts[2]);
+                        int numberOfTracks = Integer.parseInt(parts[3]);
+                        int availableCopies = Integer.parseInt(parts[4]);
+                        dvds.add(new DVD(parts[0], parts[1], duration, numberOfTracks, availableCopies));
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Error parsing number from line: " + line);
                 }
+
+
             }
         } finally {
             if (reader != null) {
@@ -144,7 +155,7 @@ public class TitlesPage {
         System.out.print("Enter the number of copies of the book: ");
         int copies = Integer.parseInt(scanner.nextLine());
 
-        boolean result = saveTitle(new Book(author, name, pages, isbn, copies, copies)); // You can modify this if you have a separate variable for total copies
+        boolean result = saveTitle(new Book(author, name, pages, isbn, copies)); // You can modify this if you have a separate variable for total copies
         if (result) {
             System.out.println("The book has been added successfully.");
         } else {
@@ -164,7 +175,7 @@ public class TitlesPage {
         System.out.print("Enter the number of copies of the DVD: ");
         int copies = Integer.parseInt(scanner.nextLine());
 
-        boolean result = saveTitle(new DVD(author, name, length, chapters, copies, copies)); // You can modify this if you have a separate variable for total copies
+        boolean result = saveTitle(new DVD(author, name, length, chapters, copies)); // You can modify this if you have a separate variable for total copies
         if (result) {
             System.out.println("The DVD has been added successfully.");
         } else {
@@ -180,12 +191,12 @@ public class TitlesPage {
             if (title instanceof Book) {
                 Book book = (Book) title;
                 fileName = "titles.txt";
-                titleString = book.getAuthorName() + "," + book.getTitle() + "," + book.getIsbn() + "," + book.getPageCount() + "," + book.getAvailableCopies() + "," + book.getTotalCopies();
+                titleString = book.getAuthorName() + "," + book.getTitle() + "," + book.getIsbn() + "," + book.getPageCount() + "," + book.getAvailableCopies();
                 books.add(book);
             } else {
                 DVD dvd = (DVD) title;
                 fileName = "titlesDVD.txt";
-                titleString = dvd.getAuthorName() + "," + dvd.getTitle() + "," + dvd.getNumberOfTracks() + "," + dvd.getDurationInMinutes() + "," + dvd.getAvailableCopies() + "," + dvd.getTotalCopies();
+                titleString = dvd.getAuthorName() + "," + dvd.getTitle() + "," + dvd.getNumberOfTracks() + "," + dvd.getDurationInMinutes() + "," + dvd.getAvailableCopies();
                 dvds.add(dvd);
             }
 
