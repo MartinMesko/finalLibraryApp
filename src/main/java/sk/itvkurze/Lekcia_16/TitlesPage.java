@@ -188,8 +188,7 @@ public class TitlesPage {
             String fileName;
             String titleString;
 
-            if (title instanceof Book) {
-                Book book = (Book) title;
+            if (title instanceof Book book) {
                 fileName = "titles.txt";
                 titleString = book.getAuthorName() + "," + book.getTitle() + "," + book.getIsbn() + "," + book.getPageCount() + "," + book.getAvailableCopies();
                 books.add(book);
