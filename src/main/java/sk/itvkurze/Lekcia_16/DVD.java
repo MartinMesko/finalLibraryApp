@@ -9,7 +9,7 @@ public class DVD {
 
 
     // konštruktor
-    public DVD(String authorName, String title, int durationInMinutes, int numberOfTracks, int availableCopies) {
+    public DVD(String title, String authorName,int numberOfTracks , int durationInMinutes, int availableCopies) {
         this.authorName = authorName;
         this.title = title;
         this.durationInMinutes = durationInMinutes;
@@ -61,4 +61,5 @@ public class DVD {
 
 
 }
+
 

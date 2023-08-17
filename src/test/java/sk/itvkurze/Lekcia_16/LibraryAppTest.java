@@ -1,40 +1,33 @@
 package sk.itvkurze.Lekcia_16;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.io.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class LibraryAppTest {
+public class LibraryAppTest {
 
-    private File testFile;
+    private TitlesPage titlesPage;
 
     @BeforeEach
     public void setUp() {
-        testFile = new File("testFile.txt");
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(testFile))) {
-            writer.write("Author,Title,100,ISBN001,5,10");
-            writer.newLine();
-            // Pridaj ďalšie riadky podľa potreby
-        } catch (IOException e) {
-            fail("Chyba pri vytváraní testovacieho súboru: " + e.getMessage());
-        }
-
-        // Ak je potrebné inicializovať iné komponenty, urobte to tu.
-    }
-
-    @AfterEach
-    public void tearDown() {
-        if (testFile.exists()) {
-            testFile.delete();
-        }
+        titlesPage = new TitlesPage();
     }
 
     @Test
-    public void whenFileExistThenTestPasses() {
+    public void testSaveBookSuccessfully() {
+        Book newBook = new Book("NewTitle", "NewAuthor", "ISBN002", 150, 5);
+        boolean result = titlesPage.saveTitle(newBook);
+        assertTrue(result, "Ukladanie knihy malo prebehnúť úspešne");
 
-        assertTrue(testFile.exists(), "Testovací súbor by mal existovať");
+
     }
 
+    @Test
+    public void testSaveDVDSuccessfully() {
+        DVD newDVD = new DVD("NewTitle", "NewAuthor", 7, 120, 3);
+        boolean result = titlesPage.saveTitle(newDVD);
+        assertTrue(result, "Ukladanie DVD malo prebehnúť úspešne");
+
+
+    }
 }

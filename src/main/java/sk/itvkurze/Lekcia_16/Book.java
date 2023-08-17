@@ -9,7 +9,7 @@ public class Book {
 
 
     // konštruktor
-    public Book(String authorName, String title, int pageCount, String isbn, int availableCopies) {
+    public Book(String title, String authorName, String isbn,int pageCount, int availableCopies) {
         this.authorName = authorName;
         this.title = title;
         this.pageCount = pageCount;
