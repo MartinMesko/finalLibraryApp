@@ -1,8 +1,5 @@
 package sk.itvkurze.Lekcia_15;
 
-import sk.itvkurze.Lekcia_16.Book;
-import sk.itvkurze.Lekcia_16.DVD;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -13,43 +10,60 @@ import java.util.Scanner;
 
 public class TitlesPage {
     private final Scanner scanner;
-    private final List<Book> books = new ArrayList<>();
-    private final List<DVD> dvds = new ArrayList<>();
+    private static final List<Book> books = new ArrayList<>();
+    private static final List<DVD> dvds = new ArrayList<>();
     private final String lineSeparator = System.lineSeparator();
+    public static int totalTitlesCount = 0;
 
-    public TitlesPage(Scanner scanner) { // konstruktor
+    public TitlesPage(Scanner scanner) {
         this.scanner = scanner;
         loadTitles();
     }
 
-    private List<String> loadTitlesFromFile(String filePath) throws IOException {
-        List<String> result = new ArrayList<>();
+    public static int loadTitlesFromFile(String filePath, String type) throws IOException {
         BufferedReader reader = null;
+        int addedTitlesCount = 0;
+
         try {
             File titlesFile = new File(filePath);
             reader = new BufferedReader(new FileReader(titlesFile));
 
             String line;
             while ((line = reader.readLine()) != null) {
-                result.add(line);
+                String[] parts = line.split(",");
+                try {
+                    if (type.equals("Book") && parts.length >= 5) {
+                        books.add(new Book(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]), Integer.parseInt(parts[4])));
+                        addedTitlesCount++;
+                    } else if (type.equals("DVD") && parts.length >= 5) {
+                        int duration = Integer.parseInt(parts[2]);
+                        int numberOfTracks = Integer.parseInt(parts[3]);
+                        int availableCopies = Integer.parseInt(parts[4]);
+                        dvds.add(new DVD(parts[0], parts[1], duration, numberOfTracks, availableCopies));
+                        addedTitlesCount++;
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Error parsing number from line: " + line);
+                }
             }
         } finally {
             if (reader != null) {
                 reader.close();
             }
         }
-        return result;
+
+        totalTitlesCount += addedTitlesCount;
+        return addedTitlesCount;
     }
 
     public void loadTitles() {
         try {
-            loadTitlesFromFile("titles.txt");
-            loadTitlesFromFile("titlesDVD.txt");
+            totalTitlesCount += loadTitlesFromFile("titles.txt", "Book");
+            totalTitlesCount += loadTitlesFromFile("titlesDVD.txt", "DVD");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
     public void displayTitlesMenu() {
         System.out.println("Titles ");
@@ -90,20 +104,21 @@ public class TitlesPage {
             System.out.println("Name: " + dvd.getTitle() + " - Author: " + dvd.getAuthorName() + " - Number of chapters: " + dvd.getNumberOfTracks() + " - Length in minutes: " + dvd.getDurationInMinutes() + " | Available copies: " + dvd.getAvailableCopies());
         }
 
+        System.out.println("Total number of all titles: " + totalTitlesCount);
         System.out.println(lineSeparator + "Press enter to return to Titles menu...");
         scanner.nextLine();
         displayTitlesMenu();
     }
 
-    private void addTitle() {
-        //TODO: Implementuj metodu pridaj titul
+    private static void addTitle() {
+        // TODO: Implementuj metodu pridaj titul
     }
 
-    private void deleteTitle() {
-        //TODO: Implementuje metodu zmazania
+    private static void deleteTitle() {
+        // TODO: Implementuje metodu zmazania
     }
 
-    private void goBack() {
+    private static void goBack() {
         System.out.println("Going back to main menu...");
     }
 }

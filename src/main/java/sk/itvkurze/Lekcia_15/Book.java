@@ -6,16 +6,16 @@ public class Book {
     private int pageCount;
     private String isbn;
     private int availableCopies;
-    private int totalCopies;
+
 
     // konštruktor
-    public Book(String authorName, String title, int pageCount, String isbn, int availableCopies, int totalCopies) {
+    public Book(String title, String authorName, String isbn,int pageCount, int availableCopies) {
         this.authorName = authorName;
         this.title = title;
         this.pageCount = pageCount;
         this.isbn = isbn;
         this.availableCopies = availableCopies;
-        this.totalCopies = totalCopies;
+
     }
 
     // getter a setter metódy
@@ -59,11 +59,5 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    public int getTotalCopies() {
-        return totalCopies;
-    }
 
-    public void setTotalCopies(int totalCopies) {
-        this.totalCopies = totalCopies;
-    }
 }

@@ -6,16 +6,16 @@ public class DVD {
     private int durationInMinutes;
     private int numberOfTracks;
     private int availableCopies;
-    private int totalCopies;
+
 
     // konštruktor
-    public DVD(String authorName, String title, int durationInMinutes, int numberOfTracks, int availableCopies, int totalCopies) {
+    public DVD(String title, String authorName,int numberOfTracks , int durationInMinutes, int availableCopies) {
         this.authorName = authorName;
         this.title = title;
         this.durationInMinutes = durationInMinutes;
         this.numberOfTracks = numberOfTracks;
         this.availableCopies = availableCopies;
-        this.totalCopies = totalCopies;
+
     }
 
     // getter a setter metódy
@@ -59,8 +59,7 @@ public class DVD {
         this.availableCopies = availableCopies;
     }
 
-    public int getTotalCopies() {
-        return totalCopies;
-    }
+
 }
+
 
